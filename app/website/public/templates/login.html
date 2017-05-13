@@ -1,0 +1,56 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+
+
+  <ion-content >
+    <div class="card loginCard animated slideInLeft" ng-class="{'visible':estudiante,'nonVisible':!estudiante}">
+      <label class="item">
+      <center>
+      <h1>UDEFU</h1>
+      <h2>Monitores en linea</h2>
+      </center>
+      </label>
+      <form ng-submit="doLogin()">
+        <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Nombre del estudiante</span>
+          <input type="text" placeholder="Nombre del estudiante" ng-model="loginData.nombre">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Cedula de estudiante</span>
+          <input type="text" placeholder="Cedula de estudiante" ng-model="loginData.dni">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Logearse</button>
+
+        </label>
+      </div>
+      </form>
+      <button class="button button-block button-positive button-clear" ng-click="toggleLogin()">Soy administrador</button>
+    </div>
+    <div class="card loginCard animated slideInRight" ng-class="{'nonVisible':estudiante, 'visible':estudiante}">
+      <label class="item">
+      <center>
+      <h1>UDEFU</h1>
+      <h2>Monitores en linea</h2>
+      </center>
+      </label>
+      <form ng-submit="doLogin()">
+        <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Usuario administrador</span>
+          <input type="text" placeholder="Usuario administrador">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Contrasena de administrador</span>
+          <input type="text" placeholder="Contrasena de administrador">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Logearse</button>
+
+        </label>
+      </div>
+      </form>
+      <button class="button button-block button-positive button-clear" ng-click="toggleLogin()">Soy estudiante</button>
+    </div>
+  </ion-content>
+</ion-view>

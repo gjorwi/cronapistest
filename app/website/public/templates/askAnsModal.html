@@ -1,0 +1,57 @@
+<ion-modal-view>
+
+
+  <ion-header-bar>
+    <h1 class="title">{{modalTitle}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeAdminLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div ng-show="type=='pregunta'">
+    <form ng-submit="addPregunta()">
+      <div class="list">
+
+      <label class="item item-input">
+        <textarea placeholder="Escribir pregunta" ng-model="preguntaData.pregunta"></textarea>
+      </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Realizar preguntar</button>
+        </label>
+      </div>
+    </form>
+    </div>
+    <div ng-show="type=='respuesta'">
+    <form ng-submit="addRespuesta()">
+      <div class="list">
+
+      <label class="item item-input">
+        <textarea placeholder="Comments"></textarea>
+      </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Responder</button>
+        </label>
+      </div>
+    </form>
+    </div>
+    <div ng-show="type=='message'">
+      <div class="card">
+        <div class="item item-text-wrap">
+          {{message}}
+      </div>
+</div>
+<center>
+<button class="button button-positive" ng-click="closeModal()">
+  Ok
+</button>
+</center>
+    </div>
+  <div ng-show="type=='list'">
+    <div class="list">
+      <a class="item" ng-repeat="asign in allAsignaturas" ng-click="setAsignatura(asign._id)">
+        {{asign.nombre}}
+      </a>
+</div>
+  </div>
+  </ion-content>
+</ion-modal-view>

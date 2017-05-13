@@ -1,0 +1,51 @@
+/* Empty. Add your own CSS if you like */
+
+.loginCard{
+
+  margin-top: 10%;
+  position: relative;
+  width: 35%;
+  left: 32%;
+
+
+}
+
+
+
+.contentCenter{
+  align-content: center!important;
+}
+
+@media only screen and (max-width: 500px) {
+
+.loginCard{
+
+  margin-top: 10%;
+  position: inherit;
+  width: 95%;
+  left: 0%;
+
+
+
+}
+
+
+}
+
+.visible{
+  display: block;
+}
+
+.nonVisible{
+  display: none;
+}
+
+.sideMenu{
+  background-color: #2b303e;
+  color:white;
+}
+
+.sidemenuButton{
+  background-color: rgba(0, 0, 0,0);
+  color:white;
+}

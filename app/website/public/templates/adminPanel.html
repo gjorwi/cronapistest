@@ -1,0 +1,16 @@
+<ion-view view-title="Administrador">
+  <ion-content>
+
+    <div class="list">
+
+    <a class="item item-avatar  item-button-right" ng-repeat="student in students">
+      <img src="img\userMale_thumb_small.png">
+      <h2>{{student.name}}</h2>
+      <p>{{student.type}}</p>
+      <button class="button button-positive" ng-click="setAsMonitor(student)">
+        convertir en monitor
+    </button>
+    </a>
+</div>
+  </ion-content>
+</ion-view>

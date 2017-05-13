@@ -1,0 +1,30 @@
+<ion-view view-title="landing">
+  <ion-content>
+    <div class="card">
+        <h1>Bienvenido {{userData.name}}</h1>
+  <div class="item item-text-wrap">
+    Aqui puedes realizar las preguntas de acuero a la asignatura donde estes inscrito
+  </div>
+</div>
+<div class="card">
+ <div class="list">
+
+  <div class="item item-button-right" style="background-color:lightgrey;color:black;" >
+   asignaturas
+    <button class="button button-positive" ng-click="getAllAsignaturas()">
+      <i class="icon ion-plus"></i>
+      agregar asignatura
+    </button>
+  </div>
+</div>
+ <div class="item item-button-right" ng-repeat="asignatura in asignaturas">
+     {{asignatura.id_asignatura.nombre}}
+    <button class="button button-positive" ng-click="ask(asignatura)">
+
+      Realizar una pregunta
+    </button>
+  </div>
+
+</div>
+  </ion-content>
+</ion-view>

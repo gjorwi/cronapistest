@@ -1,0 +1,59 @@
+<ion-modal-view style="height:90%; top:2%;">
+
+
+  <ion-header-bar>
+    <h1 class="title">{{modalTitle}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeAdminLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+   <div class="list card">
+
+  <div class="item item-avatar">
+ <img src="img\userMale_thumb_small.png">
+    <h2>{{selectedPregunta.usuario}}</h2>
+    <p>{{selectedPregunta.fecha}}</p>
+    <p>{{selectedPregunta.asignatura}}</p>
+  </div>
+  <div class="item item-text-wrap">
+    Pregunta: {{selectedPregunta.pregunta}}
+  </div>
+</div>
+<div ng-show="canRespond">
+  <div class="card">
+  <div class="item item-divider">
+    Responder
+  </div>
+  <label class="item item-input">
+    <textarea placeholder="Responder" ng-model="respuesta"></textarea>
+  </label>
+  <center>
+     <div class="item item-divider">
+    calificar
+  </div>
+  <div class="item range range-positive">
+   <span style="font-weight:700">{{icalificacion}}</span>
+    <input type="range" name="volume" min="0" max="5" value="0" ng-model="calificacion">
+    <span style="font-weight:700; font-size:25px">{{calificacion}}</span>
+  </div>
+  <button class="button button-positive" style="margin:2%;">
+  responder y calificar
+</button>
+  </center>
+</div>
+<div ng-show="canRespond == false">
+ <div class="list card">
+  <div class="item item-divider">
+  Respuestas
+  </div>
+  <div class="item item-button-right" ng-repeat="respuesta in respuestas">
+   Respuesta
+    <button class="button button-outline button-positive">
+      aceptar respuesta
+    </button>
+  </div>
+ </div>
+</div>
+  </ion-content>
+</ion-modal-view>
